@@ -1,5 +1,7 @@
 const assert  = require('chai').assert;
 const quickSort = require('../scripts/QuickSort.js');
+const randomArray = require('../scripts/RandomGenerate.js').randomArray;
+const checkArray = require('../scripts/RandomGenerate.js').checkArray;
 
 
 describe('quick-Sort', () => {
@@ -27,9 +29,9 @@ describe('quick-Sort', () => {
 
   });
 
-  it.skip('should take a large array of unsorted numbers and sort them', function () {
-    const largeArray = [];
-    assert.deepEqual(quickSort(largeArray), []);
+  it('should sort an array of 3,000,000', function () {
+    const array =  randomArray(1, 6000000, 300000);
+    assert.deepEqual(checkArray(quickSort(array)), true);
     
   });
 

@@ -1,5 +1,7 @@
 const assert  = require('chai').assert;
 const insertionSort = require('../scripts/InsertionSort.js');
+const randomArray = require('../scripts/RandomGenerate.js').randomArray;
+const checkArray = require('../scripts/RandomGenerate.js').checkArray;
 
 
 describe('insertion-sort', () => {
@@ -28,9 +30,9 @@ it('should take a small array of negative and positive numbers and sort them', f
 
   });
 
-it.skip('should take a large array of unsorted numbers and sort them', function () {
-    const largeArray = [];
-    assert.deepEqual(insertionSort(largeArray), []);
+it('should sort an array of 22,000', function () {
+    const array =  randomArray(1, 10000, 22000);
+    assert.deepEqual(checkArray(insertionSort(array)), true);
     
   });
 

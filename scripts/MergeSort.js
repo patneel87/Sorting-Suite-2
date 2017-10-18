@@ -30,9 +30,7 @@ function merge(a, b) { //takes 2 sorted arrays and returns one sorted array
   // console.log(result)
   return result;
 };
-// console.log('mergeSort')
-console.log(mergeSort(['d', 'b', 'e', 'a', 'f', 'c']));
-// => ["a", "b", "c", "d"]
+
 module.exports = mergeSort;
 
 

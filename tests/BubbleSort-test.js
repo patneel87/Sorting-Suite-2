@@ -1,5 +1,7 @@
 const assert  = require('chai').assert;
 const bubbleSort = require('../scripts/BubbleSort.js');
+const randomArray = require('../scripts/RandomGenerate.js').randomArray;
+const checkArray = require('../scripts/RandomGenerate.js').checkArray;
 
 
 describe('bubble-Sort', () => {
@@ -30,9 +32,9 @@ describe('bubble-Sort', () => {
 
   });
 
-  it.skip('should take a large array of unsorted numbers and sort them', function () {
-    const largeArray = [];
-    assert.deepEqual(bubbleSort(largeArray), []);
+  it.skip('should sort an array of 12,600', function () {
+    const array =  randomArray(1, 5000, 12600);
+    assert.deepEqual(checkArray(bubbleSort(array)), true);
     
   });
 
