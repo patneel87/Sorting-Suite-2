@@ -29,8 +29,8 @@ describe('quick-Sort', () => {
 
   });
 
-  it('should sort an array of 3,000,000', function () {
-    const array =  randomArray(1, 6000000, 300000);
+  it('should sort an array of 2,900,000', function () {
+    const array =  randomArray(1, 6000000, 2900000);
     assert.deepEqual(checkArray(quickSort(array)), true);
     
   });

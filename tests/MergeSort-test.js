@@ -1,5 +1,7 @@
 const assert  = require('chai').assert;
 const mergeSort = require('../scripts/MergeSort.js');
+const randomArray = require('../scripts/RandomGenerate.js').randomArray;
+const checkArray = require('../scripts/RandomGenerate.js').checkArray;
 
 
 describe('merge-Sort', () => {
@@ -28,10 +30,10 @@ describe('merge-Sort', () => {
 
   });
 
-  it.skip('should take a large array of unsorted numbers and sort them', function () {
-    const largeArray = [];
-    assert.deepEqual(mergeSort(largeArray), []);
-
+  it('should sort an array of 100,000', function () {
+    const array =  randomArray(1, 250000, 100000);
+    assert.deepEqual(checkArray(mergeSort(array)), true);
+    
   });
   
 

@@ -32,8 +32,8 @@ describe('bubble-Sort', () => {
 
   });
 
-  it.skip('should sort an array of 12,600', function () {
-    const array =  randomArray(1, 5000, 12600);
+  it('should sort an array of 12,000', function () {
+    const array =  randomArray(1, 5000, 12000);
     assert.deepEqual(checkArray(bubbleSort(array)), true);
     
   });
