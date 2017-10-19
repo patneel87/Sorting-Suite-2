@@ -1,29 +1,25 @@
 
-function mergeSort(array) { //splits array by its midpoint
-  if (array.length <= 1) { //returns the array if there is only 1 item in array
-    // debugger;
+function mergeSort(array) { 
+  if (array.length <= 1) { 
+  
     return array;
   }
-  const midPoint = Math.floor(array.length / 2); //midpoint
-  const left = array.slice(0, midPoint); //1st half of original array
-  const right = array.slice(midPoint, array.length); //2nd half of original array
-  // console.log(a)
-  // console.log(b)
-  return merge(mergeSort(left), mergeSort(right)); //calls merge on the two arrays (recursively split)
+  const midPoint = Math.floor(array.length / 2); 
+  const left = array.slice(0, midPoint); 
+  const right = array.slice(midPoint, array.length); 
+
+  return merge(mergeSort(left), mergeSort(right)); 
 };
-function merge(left, right) { //takes 2 sorted arrays and returns one sorted array
+function merge(left, right) { 
   let result = [];
-  // console.log('tick');
-  while (left.length && right.length) { //while both arrays have a length
+  while (left.length && right.length) { 
     if (left[0] <= right[0]) {
       result.push(left.shift());
     } else {
       result.push(right.shift());
     }
   }
-  
-  // console.log(result)
-   result.push(...left, ...right);
+     result.push(...left, ...right);
    return result;
 
 };
