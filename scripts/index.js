@@ -1,5 +1,14 @@
-const filterMe = (array) => {
-  return array
-}
+const bubbleSort = require('../scripts/BubbleSort.js');
+const insertionSort = require('../scripts/InsertionSort.js');
+const mergeSort = require('../scripts/MergeSort.js');
+const quickSort = require('../scripts/QuickSort.js') 
 
-export default filterMe
+
+
+
+module.exports = {
+  bubbleSort,
+  insertionSort,
+  mergeSort,
+  quickSort
+}
